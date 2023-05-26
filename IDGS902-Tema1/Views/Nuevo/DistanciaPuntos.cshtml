@@ -1,0 +1,34 @@
+﻿@model IDGS902_Tema1.Models.DistanciaP
+
+@{
+    ViewBag.Title = "DistanciaPuntos";
+}
+
+<h2>DistanciaPuntos</h2>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form method="post" action="/">
+                <label>X1:</label>
+                <input type="text" name="x1" class="form-control" />
+<br />
+<label>Y1:</label>
+                <input type="text" name="y1" class="form-control" />
+<br />
+<label>X2:</label>
+                <input type="text" name="x2" class="form-control" />
+<br />
+<label>Y2:</label>
+                <input type="text" name="y2" class="form-control" />
+<br />
+<input type="submit" value="Calcular" name="name" />
+
+
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <h1>la distancia es: @ViewBag.Res</h1>
+        </div>
+    </div>
+        </div>
+

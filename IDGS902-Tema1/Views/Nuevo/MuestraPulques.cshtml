@@ -1,0 +1,31 @@
+﻿@model List< IDGS902_Tema1.Models.Pulques>
+
+@{
+    ViewBag.Title = "MuestraPulques";
+}
+
+<h2>MuestraPulques</h2>
+<div>
+    <table class="table table-active">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Descripcion</th>
+                <th>Litros</th>
+                <th>Creacion</th>
+                </tr>
+        </thead>
+        <tbody>
+            @foreach (var pulque in Model )
+            {
+                <tr>
+                    <td>@pulque.Producto</td>
+                    <td>@pulque.Descripcion</td>
+                    <td>@pulque.Litros</td>
+                    <td>@pulque.Creacion</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

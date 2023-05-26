@@ -1,0 +1,101 @@
+﻿@model IDGS902_Tema1.Models.Triangulos
+
+@{
+    ViewBag.Title = "Triangulos";
+}
+
+<style>
+    .row {
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .col-md-4 {
+        text-align: right;
+    }
+
+    .col-md-8 {
+        text-align: left;
+    }
+
+    .btn {
+        margin-top: 10px;
+    }
+
+    .result-container {
+        margin-top: 50px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Tipos de Triangulos y su Area</h2>
+        @using (Html.BeginForm())
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.a1, "Punto a1", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.a1, new { htmlAttribute = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.a2, "Punto a2", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.a2, new { htmlAttribute = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.b1, "Punto b1", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.b1, new { htmlAttribute = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.b2, "Punto b2", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.b2, new { htmlAttribute = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.c1, "Punto c1", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.c1, new { htmlAttribute = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.c2, "Punto c2", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.c2, new { htmlAttribute = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-8">
+                        <input type="submit" name="Registrar" class="btn btn-outline-primary" value="Calcular" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-6 result-container">
+        @if (!string.IsNullOrEmpty(ViewBag.SiesTriangulo))
+        {
+            <h5>@ViewBag.SiesTriangulo</h5>
+            <br />
+
+            if (ViewBag.SiesTriangulo == "Los puntos SI forman un triángulo.")
+            {
+                <h3>Es un triangulo: <b>@ViewBag.tipoTriangulo</b></h3>
+                <h4>Su area es: <b>@ViewBag.AreaTriangulo u2</b></h4>
+            }
+        }
+    </div>
+
+</div>

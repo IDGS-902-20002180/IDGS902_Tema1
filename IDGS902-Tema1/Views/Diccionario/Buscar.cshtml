@@ -1,0 +1,54 @@
+﻿@model IDGS902_Tema1.Models.Diccionario
+
+@{
+    ViewBag.Title = "Buscar";
+}
+@Html.ActionLink("Regresar", "Registrar", "Diccionario", new { @class = "btn btn-link" })
+
+<h2>Buscar</h2>
+<form action="/" method="post"></form>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Palabra, "Escribe una Palabra", htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Palabra, new { htmlAttribute = new { @class = "form-control" } })
+            </div>
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Opcion, "Ingles", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.RadioButtonFor(model => model.Opcion, "Ingles", new { id = "Ingles" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Opcion, "Español", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.RadioButtonFor(model => model.Opcion, "Espanol", new { id = "Espanol" })
+        </div>
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <input type="submit" name="Registrar" class="btn btn-outline-primary my-3" value="Buscar" />
+                @Html.ActionLink("Visualizar Diccionario", "MostrarDatos", "Diccionario", new { }, new { @class = "btn btn-outline-success my-3" })
+
+            </div>
+
+
+        </div>
+        <div class="align-content-xl-end">
+            @if (!string.IsNullOrEmpty(ViewBag.PalabraEncontrada))
+            {
+
+                <h3>Su traducción es:</h3>
+                <h6><b>@ViewBag.PalabraEncontrada</b></h6>
+
+            }
+
+        </div>
+    </div>
+}
+
+

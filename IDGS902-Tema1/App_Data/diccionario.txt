@@ -1,0 +1,7 @@
+water,agua
+money,dinero
+hair,cabello
+dog,perro
+phone,celular
+play,jugar
+ball,pelota

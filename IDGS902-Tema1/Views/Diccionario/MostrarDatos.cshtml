@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "MostrarDatos";
+}
+
+<h2>MostrarDatos</h2>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Inglés</th>
+            <th>Español</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Archivos)
+        {
+            var palabras = item.Split(',');
+            if (palabras.Length >= 2)
+            {
+                <tr>
+                    <td>@palabras[0]</td>
+                    <td>@palabras[1]</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="2">Formato incorrecto: @item</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
